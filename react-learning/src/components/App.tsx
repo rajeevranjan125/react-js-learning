@@ -89,9 +89,12 @@ function App() {
 
   const [city, setCity] = useState("");
   const [name, setName] = useState("");
+  console.log('hello world');
 
   return (
     <div className="app-container">
+     
+     
       {/* <div className="top-left">
         <h1>Hello React</h1>
       </div>
