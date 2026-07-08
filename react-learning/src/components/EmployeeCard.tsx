@@ -1,9 +1,11 @@
-const EmployeeCard = ({name, id}: { name: string, id: number }) => {
+const EmployeeCard = ({ name, id, class: className}: { name: string, id: number, class: string }) => {
 
     return (
         <>
+            <h1>{className}</h1>
             <h2>{name}</h2>
-            <h1>{id}</h1>
+            <h3>{id}</h3>
+
         </>
     )
 }

@@ -1,7 +1,7 @@
 // import Hello from './Hello'
 import EmployeeCard from './EmployeeCard'
 import type { StudentInfoInter } from '../types/StudentInfoInter';
-import StudentInfo from './StudentInfo';
+// import StudentInfo from './StudentInfo';
 import { useState } from 'react';
 
 function App() {
@@ -31,6 +31,11 @@ function App() {
       id: 5,
       name: "Vikram",
       class: "E"
+    },
+    {
+      id: 6,
+      name: "shreyansh",
+      class: "F"
     }
   ];
 
@@ -45,26 +50,39 @@ function App() {
   //   address: 'jamshedpur'
   // }
 
-  const studentInfo: StudentInfoInter = {
-    id: 1,
-    name: 'rambhir',
-    address: 'patliputra'
-  }
+  // const studentInfo: StudentInfoInter = {
+  //   id: 1,
+  //   name: 'rambhir',
+  //   address: 'patliputra'
+  // }
 
   const [count, setCount] = useState(0);
 
   const incrementCount = () => {
-    setCount(prev => prev+1);
-    setCount(prev => prev+1);
-    };
+    setCount(prev => prev + 1);
+    setCount(prev => prev + 1);
+  };
 
   const decrementCount = () => {
     // setCount(count - 1); not recommended
-    setCount(prev => prev -1);
-    setCount(prev => prev -1);
+    setCount(prev => prev - 1);
+    setCount(prev => prev - 1);
   }
 
-  let count2 =0;
+  // let count2 = 0;
+
+  // let isActive = true;
+
+  // const deactivate= ()=>{
+  //   isActive=false;
+  // }
+
+  const [isActive, setIsActive] = useState(false);
+
+  const changeActiveStatus = () => {
+
+    setIsActive(false);
+  }
 
   return (
     <div className="app-container">
@@ -74,8 +92,8 @@ function App() {
       <div className="top-right">
         <Hello />
       </div> */}
-      <div>
-        {/* Props are simply the arguments of a React component. */}
+      {/* <div>
+        Props are simply the arguments of a React component.
         <div className='student-1'>
           <EmployeeCard name={students[0].name} id={students[0].id} />
         </div>
@@ -91,17 +109,44 @@ function App() {
         <div>
           <StudentInfo props={studentInfo} />
         </div>
-      </div>
+      </div> */}
       <div>
         <button onClick={incrementCount}>+</button>
         <p>{count}</p>
         <button onClick={decrementCount}>-</button>
         {/* without use state */}
-        <p>{count2}</p>
-        <button onClick={()=>count2++}></button>
+        {/* <p>{count2}</p>
+        <button onClick={() => count2++}></button> */}
       </div>
+      <div>
+        {
+          students.map((student) => {
+            return (<EmployeeCard
+              key={student.id}
+              id={student.id}
+              name={student.name}
+              class={student.class}
+            />)
+          })
+        }
+      </div>
+
+      {/* <div>
+        {isActive ? <h1>"Welcome"</h1> : <h6>"Bye bye"</h6>}
+      </div> */}
+
+      {/* <div>
+        {isActive && <h1>welcome</h1>}
+      </div>
+      <div>
+        <button onClick={changeActiveStatus}>deactivate</button>
+      </div> */}
     </div>
   )
 }
 
 export default App
+
+// conditional rendering
+//1 -> ternary operator
+//2 ->
