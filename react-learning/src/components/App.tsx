@@ -56,18 +56,18 @@ function App() {
   //   address: 'patliputra'
   // }
 
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
 
-  const incrementCount = () => {
-    setCount(prev => prev + 1);
-    setCount(prev => prev + 1);
-  };
+  // const incrementCount = () => {
+  //   setCount(prev => prev + 1);
+  //   setCount(prev => prev + 1);
+  // };
 
-  const decrementCount = () => {
-    // setCount(count - 1); not recommended
-    setCount(prev => prev - 1);
-    setCount(prev => prev - 1);
-  }
+  // const decrementCount = () => {
+  //   // setCount(count - 1); not recommended
+  //   setCount(prev => prev - 1);
+  //   setCount(prev => prev - 1);
+  // }
 
   // let count2 = 0;
 
@@ -77,12 +77,18 @@ function App() {
   //   isActive=false;
   // }
 
-  const [isActive, setIsActive] = useState(false);
+  // const [isActive, setIsActive] = useState(false);
+  // const [name, setName] = useState("");
 
-  const changeActiveStatus = () => {
 
-    setIsActive(false);
-  }
+
+  // const changeActiveStatus = () => {
+
+  //   setIsActive(false);
+  // }
+
+  const [city, setCity] = useState("");
+  const [name, setName] = useState("");
 
   return (
     <div className="app-container">
@@ -110,15 +116,15 @@ function App() {
           <StudentInfo props={studentInfo} />
         </div>
       </div> */}
-      <div>
+      {/* <div>
         <button onClick={incrementCount}>+</button>
         <p>{count}</p>
         <button onClick={decrementCount}>-</button>
-        {/* without use state */}
-        {/* <p>{count2}</p>
-        <button onClick={() => count2++}></button> */}
-      </div>
-      <div>
+        without use state
+        <p>{count2}</p>
+        <button onClick={() => count2++}></button>
+      </div> */}
+      {/* <div>
         {
           students.map((student) => {
             return (<EmployeeCard
@@ -129,7 +135,7 @@ function App() {
             />)
           })
         }
-      </div>
+      </div> */}
 
       {/* <div>
         {isActive ? <h1>"Welcome"</h1> : <h6>"Bye bye"</h6>}
@@ -141,6 +147,40 @@ function App() {
       <div>
         <button onClick={changeActiveStatus}>deactivate</button>
       </div> */}
+
+      {/* <div>
+        <form action="#">
+          <label htmlFor="name">Name: </label>
+          <input
+            id='name'
+            type="text"
+            value={name}
+            onChange={(e) => { setName(e.target.value) }}
+          />
+        </form>
+        <p>{name}</p>
+      </div> */}
+
+      <div>
+        <form action="#">
+          <label htmlFor="name">Name: </label>
+          <input
+            id='name'
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <label htmlFor="city">City: </label>
+          <input
+            id='city'
+            type="text"
+            value={city}
+            onChange={(e)=>setCity(e.target.value)}
+          />
+          <p>name: {name}</p>
+          <p>city: {city}</p>
+        </form>
+      </div>
     </div>
   )
 }
