@@ -1,8 +1,9 @@
 // import Hello from './Hello'
-import EmployeeCard from './EmployeeCard'
-import type { StudentInfoInter } from '../types/StudentInfoInter';
+// import EmployeeCard from './EmployeeCard'
+// import type { StudentInfoInter } from '../types/StudentInfoInter';
 // import StudentInfo from './StudentInfo';
-import { useState } from 'react';
+// import { useState } from 'react';
+import Child from './Child';
 
 function App() {
 
@@ -87,9 +88,13 @@ function App() {
   //   setIsActive(false);
   // }
 
-  const [city, setCity] = useState("");
-  const [name, setName] = useState("");
-  console.log('hello world');
+  // const [city, setCity] = useState("");
+  // const [name, setName] = useState("");
+  // console.log('hello world');
+
+  const sayHello= ()=>{
+    console.log("hello from parent");
+  }
 
   return (
     <div className="app-container">
@@ -164,7 +169,7 @@ function App() {
         <p>{name}</p>
       </div> */}
 
-      <div>
+      {/* <div>
         <form action="#">
           <label htmlFor="name">Name: </label>
           <input
@@ -183,7 +188,9 @@ function App() {
           <p>name: {name}</p>
           <p>city: {city}</p>
         </form>
-      </div>
+      </div> */}
+
+      <Child tellingHello = {sayHello} />
     </div>
   )
 }
