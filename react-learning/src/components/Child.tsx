@@ -12,3 +12,6 @@ const Child = ({ tellingHello }: Props) => {
 }
 
 export default Child;
+// export default Child;
+// export default Child;
+// export default Child;
