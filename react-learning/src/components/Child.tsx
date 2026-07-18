@@ -7,6 +7,8 @@ const Child = ({ tellingHello }: Props) => {
     return (
         <div>
             <button onClick={tellingHello}></button>
+            <button onClick={tellingHello}></button>
+            <button onClick={tellingHello}></button>
         </div>
     )
 }
